@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+// Models
+use App\Models\House;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,21 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $students = [
-        'Marco',
-        'Gino',
-        'Claudia',
-    ];
+    $houses = House::all();
 
-    $data = compact('students');
-
-    // dd($data);
-
-    return view('home', $data);
-
-    // return view('home', [
-    //     'students' => $students
-    // ]);
+    dd($houses);
 });
 
 Route::get('/contatti', function () {
